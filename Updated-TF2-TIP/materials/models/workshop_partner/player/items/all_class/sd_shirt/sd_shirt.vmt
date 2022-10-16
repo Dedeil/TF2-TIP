@@ -1,0 +1,52 @@
+VertexLitGeneric
+{
+	$basetexture "models/workshop_partner/player/items/all_class/sd_shirt/sd_shirt"
+	$bumpmap "models/workshop_partner/player/items/all_class/sd_shirt/sd_shirt_normal"
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
+
+	$phong 1
+	$phongfresnelranges "[0.3 1 8]"
+	$phongexponent 20
+	$phongboost 0
+
+	// Rim lighting parameters
+	$rimlight 1				// To enable rim lighting (requires phong)
+	$rimlightexponent 4		// Exponent for phong component of rim lighting	
+	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
+
+	// Cloaking
+	$cloakpassenabled 1
+	
+	$yellow 0
+
+	Proxies
+	{
+		spy_invis
+		{
+		}
+
+		AnimatedTexture
+		{
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Equals
+		{
+			srcVar1 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

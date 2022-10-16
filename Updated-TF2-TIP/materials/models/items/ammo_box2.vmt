@@ -1,0 +1,31 @@
+VertexLitGeneric
+{
+
+	$lightwarptexture "models/buildables/sentry1/sentry1_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.3 1 8]"
+	$phongexponent 2
+	$phongboost 10
+	$basemapalphaphongmask 1
+
+	// Rim lighting parameters
+	$rimlight 1				// To enable rim lighting (requires phong)
+	$rimlightexponent 4		// Exponent for phong component of rim lighting	
+	$rimlightboost 1		// Boost for ambient cube component of rim lighting
+
+	$selfillum 1
+
+	// Use separate self-illum mask on Post DX9 hardware
+	>=DX90
+	{
+		$basetexture 	"models/items/ammo_box2_noalpha"
+		$selfillummask 	"models/items/item_selfillum"
+	}
+
+	// Use redundant self-illum in base alpha on Pre DX9 hardware
+	<DX90
+	{
+		$basetexture 	"models/items/ammo_box2"
+	}
+}

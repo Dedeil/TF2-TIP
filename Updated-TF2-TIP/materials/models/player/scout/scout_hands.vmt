@@ -1,0 +1,28 @@
+VertexLitGeneric
+{
+	$basetexture "models/player/scout/scout_hands"
+	$bumpmap "models/player/scout/scout_hands_normal"
+
+	$lightwarptexture "models/player/engineer/engineer_hands_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[1 5 6]"
+	$halflambert 1
+	$phongexponent 8
+	$phongboost 0.07
+
+	// Rim lighting parameters
+	$rimlight 1				// To enable rim lighting (requires phong)
+	$rimlightexponent 4		// Exponent for phong component of rim lighting	
+	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
+
+	// Cloaking
+	$cloakpassenabled 1
+
+	Proxies
+	{
+		vm_invis
+		{
+		}
+	}
+}

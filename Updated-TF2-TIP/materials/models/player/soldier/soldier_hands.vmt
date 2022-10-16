@@ -1,0 +1,27 @@
+VertexLitGeneric
+{
+	$basetexture "models/player/soldier/soldier_hands"
+
+	$lightwarptexture "models/lightwarps/hand_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.3 0.6 3]"
+	$phongexponent 10
+	$phongboost 0.65
+	$basemapalphaphongmask 1
+
+	// Rim lighting parameters
+	$rimlight 1				// To enable rim lighting (requires phong)
+	$rimlightexponent 4		// Exponent for phong component of rim lighting	
+	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
+
+	// Cloaking
+	$cloakpassenabled 1
+
+	Proxies
+	{
+		vm_invis
+		{
+		}
+	}
+}
