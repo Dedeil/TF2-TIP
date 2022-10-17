@@ -1,40 +1,55 @@
 VertexLitGeneric
 {
-	"$baseTexture" "models\player\items\spy/spy_openjacket_blue"
-	$bumpMap models\player\items\spy\spy_openjacket_normal
-	
-	$lightWarpTexture models\player\pyro\pyro_lightwarp
-	
+	$basetexture "models/player/items/spy/spy_openjacket_blue"
+	$bumpmap "models/player/items/spy/spy_openjacket_normal"
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
+
 	$phong 1
-	$phongFresnelRanges "[0.3 1 8]"
+	$phongfresnelranges "[0.3 1 8]"
+	$phongexponent 5
+
+	// Rim lighting parameters
+	$rimlight 1				// To enable rim lighting (requires phong)
+	$rimlightexponent 4		// Exponent for phong component of rim lighting	
+	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
+
+	$blendtintbybasealpha 1
+
+	// Cloaking
+	$cloakpassenabled 1
 	
-	$rimLight 1
-	$rimLightExponent 4
-	$rimLightBoost 0.5
-	
-	$blendTintByBaseAlpha 1
-	
-	$colorTintBase "{34 43 68}"
-	$colorTintTemp 0
-	
-	$cloakPassEnabled 1
-	$cloakColorTint "[0.4 0.5 1.0]"
-	
+	$colortint_base "{34 43 68}"
+	$colortint_tmp 0
+
 	Proxies
 	{
-		Spy_Invis
+		spy_invis
 		{
 		}
+
+		AnimatedTexture
+		{
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
+		}
+
 		ItemTintColor
 		{
-			resultVar $colorTintTemp
+			resultVar "$colortint_tmp"
 		}
+
 		SelectFirstIfNonZero
 		{
-			srcVar1 $colorTintTemp
-			srcVar2 $colorTintBase
-			resultVar $color2
+			srcVar1 "$colortint_tmp"
+			srcVar2 "$colortint_base"
+			resultVar "$color2"
 		}
 	}
 }
-

@@ -1,9 +1,10 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$basetexture" "Models/props_gameplay/cap_point_base"
-	"$bumpmap" "Models/props_gameplay/cap_point_base_normal"
-	"$phong" "1"
-	"$phongexponent" "50"
-	"$phongboost" ".5"	
-	"$phongfresnelranges"	"[.7 15 20]"
+	$basetexture "models/props_gameplay/cap_point_base"
+	$bumpmap "models/props_gameplay/cap_point_base_normal"
+
+	$phong 1
+	$phongfresnelranges "[0.7 15 20]"
+	$phongexponent 50
+	$phongboost 0.5
 }

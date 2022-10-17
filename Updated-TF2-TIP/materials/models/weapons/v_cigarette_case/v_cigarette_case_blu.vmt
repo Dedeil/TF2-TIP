@@ -1,55 +1,61 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models\weapons\v_cigarette_case\v_cigarette_case_blu"
-	"$selfillum" "1"
-	"$bumpmap" "models\weapons\v_cigarette_case\v_cigarette_case_normal"
-	
-	"$phong" "1"
-	"$phongexponent" "25"
-	"$phongboost" "6"	
-	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
-	"$phongfresnelranges" "[.25 2 1]"
+	$basetexture "models/weapons/v_cigarette_case/v_cigarette_case_blu"
+	$bumpmap "models/weapons/v_cigarette_case/v_cigarette_case_normal"
 
-	"$rimlight" "1"
-	"$rimlightexponent" "4"	
-	"$rimlightboost" ".5"
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
 
-	"$glowcolor" "1"
+	$phong 1
+	$phongfresnelranges "[0.25 2 1]"
+	$phongexponent 25
+	$phongboost 6
+
+	// Rim lighting parameters
+	$rimlight 1				// To enable rim lighting (requires phong)
+	$rimlightexponent 4		// Exponent for phong component of rim lighting	
+	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
+
+	$selfillum 1
 
 	// Cloaking
-	"$cloakPassEnabled" "1"
-	"$sheenPassEnabled" "1"
+	$cloakpassenabled 1
 
-	"$sheenmap" 		"cubemaps\cubemap_sheen001"
-	"$sheenmapmask" 		"Effects\AnimatedSheen\animatedsheen0"
-	"$sheenmaptint" 		"[ 1 1 1 ]"
-	"$sheenmapmaskframe" 	"0"
-	"$sheenindex" 		"0"
+	$glowcolor 1
+	$sheenindex 0
+	$sheenmap "cubemaps\cubemap_sheen001"
+	$sheenmapmask "effects\animatedsheen\animatedsheen0"
+	$sheenmapmaskframe 0
+	$sheenmaptint "[ 1 1 1 ]"
+	$sheenpassenabled 1
 
-	"Proxies"
+	Proxies
 	{
-		"AnimatedWeaponSheen"
+		AnimatedWeaponSheen
 		{
-			"animatedtexturevar" 		"$sheenmapmask"
-			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
-			"animatedtextureframerate" 		"40"
+			animatedtexturevar "$sheenmapmask"
+			animatedtextureframenumvar "$sheenmapmaskframe"
+			animatedtextureframerate 40
 		}
-		"invis"
+
+		invis
 		{
 		}
-		"ModelGlowColor"
+
+		ModelGlowColor
 		{
-			"resultVar" "$glowcolor"
+			resultVar "$glowcolor"
 		}
-		"Equals"
+
+		Equals
 		{
-			"srcVar1"  "$glowcolor"
-			"resultVar" "$selfillumtint"
+			srcVar1 "$glowcolor"
+			resultVar "$selfillumtint"
 		}
-		"Equals"
+
+		Equals
 		{
-			"srcVar1"  "$glowcolor"
-			"resultVar" "$color2"
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
 		}
 	}
 }
