@@ -1,0 +1,17 @@
+VertexLitGeneric
+{
+	$basetexture "models/bots/demo/demobot_gib_blue"
+
+	$lightwarptexture "models/lightwarps/robot_lightwarp"
+
+	$phong 1
+	$phongexponenttexture "models/bots/demo/demo_bot_exp"
+	$phongfresnelranges "[0.5 0.7 1]"
+	$phongboost 4
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+	$rimmask 1
+}
