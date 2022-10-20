@@ -1,95 +1,85 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$nodecal" "1"
-	"$baseTexture" "models/bots/skeleton/hwn_skeleton_blue"
+	$basetexture "models/bots/skeleton/hwn_skeleton_blue"
 
-	"$detail" "effects/emp_arc1"
-	"$detailscale" "8"
-	"$detailblendfactor" 1
-	"$detailblendmode" 1
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 1
+	$detailscale 0.5
+	$detailblendfactor 0
+
+	$phong 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$phongexponent 15
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$selfillum 1
+	$selfillumfresnel 1
+	$selfillumfresnelminmaxexp "[0.05 0 25]"
+	$selfillumtint "[18 145 230]"
+
+	$nodecal 1
+
+	$cloakpassenabled 1
 	
-	"$yellow" "0"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	$yellow 0
 
-	">=DX90"
+	<DX90
 	{
-		"$selfillum" "1"
+		$selfillum "0"
 	}
-	
-	"$selfillumtint" "[18 145 230]"
-	"$selfIllumFresnel" "1"
-	"$selfIllumFresnelMinMaxExp" "[.05 0 25]" // 0.0 1.0 1.0 is the default
-	//"$selfIllumFresnelMinMaxExp" "[0 10 20]" // 0.0 1.0 1.0 is the default
 
-	"$phong" "1"
-	"$phongexponent" "15"
-	"$phongboost" "1"
-	"$phongfresnelranges" "[.25 .5 1]"
-	"$basemapalphaphongmask" "1"
-	"$rimlight" "1"
-	"$rimlightexponent" "4"
-	"$rimlightboost" ".5"
-
-	"$cloakPassEnabled" "1"
-
-	"Proxies"
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
 
-		"AnimatedTexture"
+		AnimatedTexture
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
 		}
 
-
-		"YellowLevel"
+		YellowLevel
 		{
-			"resultVar" "$yellow"
+			resultVar "$yellow"
 		}
 
-		"Equals"
+		Equals
 		{
-			"srcVar1" "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 
-// ------------------------- where the magic happens
-
-		"Sine"
+		Sine
 		{
-			"sineperiod" "2"
-			"sinemin" ".00125"
-			"sinemax" ".1"
-			"resultVar" "$selfillumfresnelminmaxexp[1]"
-		}
-		
-		"Sine"
-		{
-			"sineperiod" "2"
-			"sinemin" "0"
-			"sinemax" "55"
-			"resultVar" "$selfillumfresnelminmaxexp[3]"
+			sineperiod 2
+			sinemin .00125
+			sinemax .1
+			resultVar "$selfillumfresnelminmaxexp[1]"
 		}
 
-// FIRE! FIRE! FIIIIIRRRREEE!		
-		"Sine"
+		Sine
 		{
-			"sineperiod" "2"
-			"sinemin" "0"
-			"sinemax" ".1"
-			"resultVar" "$detailblendfactor"
+			sineperiod 2
+			sinemin 0
+			sinemax 55
+			resultVar "$selfillumfresnelminmaxexp[3]"
 		}
-		
-		"Sine"
+
+		Sine
 		{
-			"sineperiod" "1"
-			"sinemin" "25"
-			"sinemax" "5"
-			"resultVar" "$rimlightboost" 
+			sineperiod 1
+			sinemin 25
+			sinemax 5
+			resultVar "$rimlightboost"
 		}
 	}
 }

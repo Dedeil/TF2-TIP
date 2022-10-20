@@ -1,25 +1,16 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models\buildables\toolbox/toolbox_blue"
+	$basetexture "models/buildables/toolbox/toolbox_blue"
 
-	"$phong" "1"
-	"$phongexponent" "25"
-	"$phongboost" "25"	
-	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
-	"$phongfresnelranges" "[0.25 0.5 1]"
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
 
-	"$basemapalphaphongmask" "1"
+	$phong 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$phongexponent 25
+	$phongboost 25
+	$basemapalphaphongmask 1
 
-	"$rimlight" "1"
-	"$rimlightexponent" "4"	
-	"$rimlightboost" ".5"
-
-	// Cloaking
-//	"$cloakPassEnabled" "1"
-//	"Proxies"
-//	{
-//		"weapon_invis"
-//		{
-//		}
-//	}
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 }

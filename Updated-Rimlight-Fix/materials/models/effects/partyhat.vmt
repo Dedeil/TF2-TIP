@@ -1,25 +1,16 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$basetexture" "models/effects/partyhat"
-	"$bumpmap" "models/effects/flat_normal"
+	$basetexture "models/effects/partyhat"
+	$bumpmap "models/effects/flat_normal"
 
-	"$phong" "1"
-	"$phongexponent" "12"
-	"$phongboost" "1"	
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"	"[.3 .5 .6]"
-	"$halflambert" "1"
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
 
-	// Rim lighting parameters
-	"$rimlight" "1"												// To enable rim lighting (requires phong)
-	"$rimlightexponent" "4"										// Exponent for phong component of rim lighting	
-	"$rimlightboost" ".5"										// Boost for ambient cube component of rim lighting
-	// Cloaking
-	"$cloakPassEnabled" "1"
-	"Proxies"
-	{
-		"weapon_invis"
-		{
-		}
-	}
+	$phong 1
+	$phongfresnelranges "[0.25 1 4]"
+	$halflambert 1
+	$phongexponent 12
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 }

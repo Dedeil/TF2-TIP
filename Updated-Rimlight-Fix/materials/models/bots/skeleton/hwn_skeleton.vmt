@@ -1,54 +1,57 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$nodecal" "1"
-	"$baseTexture" "models/bots/skeleton/hwn_skeleton"
+	$basetexture "models/bots/skeleton/hwn_skeleton"
 
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
 
-	"$yellow" "0"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 1
+	$detailscale 0.5
+	$detailblendfactor 0
 
-	"$phong" "1"
-	"$phongexponent" "15"
-	"$phongboost" ".5"
-	"$phongfresnelranges" "[.25 .5 1]"
-	"$basemapalphaphongmask" "1"
-	"$rimlight" "1"
-	"$rimlightexponent" "4"
-	"$rimlightboost" ".5"
+	$phong 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$phongexponent 15
+	$phongboost 0.5
+	$basemapalphaphongmask 1
 
-	"$cloakPassEnabled" "1"
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 
-	"Proxies"
+	$nodecal 1
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
 
-		"AnimatedTexture"
+		AnimatedTexture
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
 		}
 
-		"BurnLevel"
+		BurnLevel
 		{
-			"resultVar" "$detailblendfactor"
+			resultVar "$detailblendfactor"
 		}
 
-		"YellowLevel"
+		YellowLevel
 		{
-			"resultVar" "$yellow"
+			resultVar "$yellow"
 		}
 
-		"Equals"
+		Equals
 		{
-			"srcVar1" "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }

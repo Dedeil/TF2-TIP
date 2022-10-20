@@ -1,66 +1,65 @@
-"VertexLitGeneric"
-//"Ghostrobo"
+VertexLitGeneric
 {
-	"$basetexture" "models/bots/merasmus/merasmus_head_spectral"
-//	"$bumpmap" "models/player/sniper/sniper_normal"
-	
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
-		
-	"$phong" "1"
-	"$phongexponent" "20"
-	"$phongboost" ".3"   
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"      "[.3 1 8]"
-	"$halflambert" "0"
-	
-	// Rim lighting parameters
-	"$rimlight" "1"                 // To enable rim lighting (requires phong)
-	"$rimlightexponent" "4"         // Exponent for phong component of rim lighting    
-	"$rimlightboost" ".5"           // Boost for ambient cube component of rim lighting
-	"$phongtint"  "[0 1 .3]"
-	
-	">=DX90"
+	$basetexture "models/bots/merasmus/merasmus_head_spectral"
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
+
+	$phong 1
+	$phongfresnelranges "[0.3 1 8]"
+	$phongtint "[0 1 0.30]"
+	$phongexponent 20
+	$phongboost 0.3
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$selfillum 1
+	$selfillumfresnel 1
+	$selfillumfresnelminmaxexp "[1 1 1]"
+	$selfillumtint "[2 3 2]"
+
+	$cloakpassenabled 0
+
+	$yellow 0
+
+	<DX90
 	{
-		"$selfillum" "1"
-		"$selfIllumFresnel" "1"
-		"$selfIllumFresnelMinMaxExp" "[1 1 1]" // 0.0 1.0 1.0 is the default
-		"$selfillumtint" "[2.0 3.0 2.0]"
+		$selfillum "0"
 	}
-	
-	// Cloaking
-	"$cloakPassEnabled" "0"
-	
-	"$yellow" "0"
-	"$one" "1"
-	
-	
-	"Proxies"
+
+	Proxies
 	{
-		"spy_invis"
+		spy_invis
 		{
 		}
-		"AnimatedTexture"
+
+		AnimatedTexture
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
 		}
-		"BurnLevel"
+
+		BurnLevel
 		{
-			"resultVar" "$detailblendfactor"
+			resultVar "$detailblendfactor"
 		}
-		"YellowLevel"
+
+		YellowLevel
 		{
-			"resultVar" "$yellow"
+			resultVar "$yellow"
 		}
-		"Equals"
+
+		Equals
 		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
-	
 	}
 }

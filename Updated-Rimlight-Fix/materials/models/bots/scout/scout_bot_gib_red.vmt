@@ -1,27 +1,17 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$basetexture" "models\bots\scout\bot_scout_gib_red"
+	$basetexture "models/bots/scout/bot_scout_gib_red"
 
-	
-	"$phong" "1"
-//	"$phongexponent" "200"
-	"$phongboost" "4"	
-	"$phongfresnelranges"	"[.5 .7 1]"
-	"$halflambert" "0"
-	"$phongexponenttexture" "models\bots\scout\bot_scout_exp"
+	$lightwarptexture "models/lightwarps/robot_lightwarp"
 
-	"$yellow" "0"
-	"$one" "1"
+	$phong 1
+	$phongexponenttexture "models/bots/scout/bot_scout_exp"
+	$phongfresnelranges "[0.5 0.7 1]"
+	$phongboost 4
+	$basemapalphaphongmask 1
 
-
-	"$lightwarptexture" "models\lightwarps\robot_lightwarp"
-
-	"$basemapalphaphongmask" "1"
-	
-	"$rimlight" "1"						
-	"$rimlightexponent" "4"				
-	"$rimlightboost" ".5"
-	"$rimmask" "1"
-
-
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+	$rimmask 1
 }

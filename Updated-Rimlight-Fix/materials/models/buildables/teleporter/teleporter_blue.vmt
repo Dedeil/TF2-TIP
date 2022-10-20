@@ -1,24 +1,21 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$basetexture"	"models\buildables\teleporter\tp_sheet_blue"
+	$basetexture "models/buildables/teleporter/tp_sheet_blue"
 
-	"$detail" "models\buildables\teleporter\tp_lights_blue"
-	"$detailscale" "1"
-	"$detailblendfactor" .9
-	"$detailblendmode" 6
+	$lightwarptexture "models/buildables/sentry1/sentry1_lightwarp"
 
+	$detail "models/buildables/teleporter/tp_lights_blue"
+	$detailblendmode 6
+	$detailscale 1
+	$detailblendfactor 0.9
 
-	"$phong" "1"
-	"$phongboost" "10"
-	"$phongexponent" "25"
-	"$lightwarptexture" "models\buildables\sentry1\Sentry1_lightwarp"
-	"$phongfresnelranges"	"[.5 1.5 10]"
-	
-	"$basemapalphaphongmask" "1"
+	$phong 1
+	$phongfresnelranges "[0.5 1.5 10]"
+	$phongexponent 25
+	$phongboost 10
+	$basemapalphaphongmask 1
 
-	"$rimlight" "1"		
-	"$rimlightexponent" "4"				
-	"$rimlightboost" ".5"
-	
-
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 }

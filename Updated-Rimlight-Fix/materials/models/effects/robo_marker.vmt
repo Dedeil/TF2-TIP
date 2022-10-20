@@ -1,30 +1,25 @@
-"UnLitTwoTexture"
+UnlitTwoTexture
 {
-	"$basetexture"	"models/effects/robo_marker"
-	"$texture2"	"models/effects/cappoint_beam_lines_b"
-	"$additive" "1"
-	"$model" "1"
-//	"$nocull" "1"
+	$basetexture "models/effects/robo_marker"
+	$texture2 "models/effects/cappoint_beam_lines_b"
 
-	"$rimlight" "1"						
-	"$rimlightexponent" "4"				
-	"$rimlightboost" ".5"
-	"$rimmask" "1"
-	
-	"Proxies"
+	$additive 1
+
+	Proxies
 	{
-		"TextureScroll"
+		TextureScroll
 		{
-			"texturescrollvar" "$texture2transform"
-			"texturescrollrate" .1
-			"texturescrollangle" 90
+			texturescrollvar "$texture2transform"
+			texturescrollrate .1
+			texturescrollangle 90
 		}
-		"Sine"
+
+		Sine
 		{
-			"Sineperiod" "1"
-			"SineMax" "1"
-			"SineMin" ".8"
-			"resultVar" "$color"
+			Sineperiod 1
+			SineMax 1
+			SineMin .8
+			resultVar "$color"
 		}
 	}
 }
