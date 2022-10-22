@@ -1,65 +1,69 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/all_domination_hat_b"
-	"$bumpmap" "models/player/items/all_class/all_domination_hat_2009_phongmask"
+	$basetexture "models/player/items/all_class/all_domination_hat_b"
+	$bumpmap "models/player/items/all_class/all_domination_hat_2009_phongmask"
 
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
 
-	"$yellow" "0"
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
 
-	"$blendtintbybasealpha" "1" 
-	"$blendtintcoloroverbase" "0"   // between 0-1 determines how much blended by tinting vs. replacing the color
+	$phong 1
+	$phongfresnelranges "[0.25 1 4]"
+	$phongexponent 20
+	$phongboost 5
 
-	"$colortint_base" "{56 48 48}"  // put the RGB value of whats being colored when no paint is present, if $blendtintcoloroverbase is 0 then put [1 1 1] here.
-	"$colortint_tmp" "[0 0 0]"
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 
+	$blendtintbybasealpha 1
+	$blendtintcoloroverbase 0
 
-	"$phong" "1"
-	"$phongexponent" "20"
-	"$phongboost" "5"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"	"[.25 1 4]"
+	$cloakpassenabled 1
 
+	$colortint_base "{56 48 48}"
+	$colortint_tmp "[0 0 0]"
 
-	// Rim lighting parameters
-	"$rimlight" "1"												// To enable rim lighting (requires phong)
-	"$rimlightexponent"	 "4"										// Exponent for phong component of rim lighting	
-	"$rimlightboost" ".5"
+	$yellow 0
 
-
-	// Cloaking
-	"$cloakPassEnabled" "1"
-	"Proxies"
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
-		}
-		"BurnLevel"
-		{
-			"resultVar" "$detailblendfactor"
-		}
-		"YellowLevel"
-		{
-			"resultVar" "$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
 		}
 
-		"ItemTintColor"
+		AnimatedTexture
 		{
-			"resultVar" "$colortint_tmp"
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
 		}
-		"SelectFirstIfNonZero"
+
+		YellowLevel
 		{
-			"srcVar1"	"$colortint_tmp"
-			"srcVar2"	"$colortint_base"
-			"resultVar" "$color2"
+			resultVar "$yellow"
+		}
+
+		ItemTintColor
+		{
+			resultVar "$colortint_tmp"
+		}
+
+		SelectFirstIfNonZero
+		{
+			srcVar1 "$colortint_tmp"
+			srcVar2 "$colortint_base"
+			resultVar "$color2"
+		}
+
+		Multiply
+		{
+			srcVar1 "$color2"
+			srcVar2 "$yellow"
+			resultvar "$color2"
 		}
 	}
 }

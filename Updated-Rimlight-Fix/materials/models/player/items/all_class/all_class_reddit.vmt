@@ -1,49 +1,43 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$basetexture"		"models/player/items/all_class/all_class_reddit"
-	"$lightwarptexture"	"models/player/pyro/pyro_lightwarp"
-	"$phong"		"1"
-	"$phongexponent"	"25"
-	"$phongboost"		"0.100000"
-	"$phongfresnelranges"	"[.25 .5 1]"
-	"$rimlight"		"1"
-	"$rimlightexponent"	"4"
-	"$rimlightboost"	".5"
-	"$bumpmapalphaphongmask"	"1"
-	"$cloakPassEnabled"		"1"
-	"$detail"		"effects/tiledfire/fireLayeredSlowTiled512"
-	"$blendtintbybasealpha"		"1"
-	"$blendtintcoloroverbase"	"0"
+	$basetexture "models/player/items/all_class/all_class_reddit"
 
-	"$detailscale"		"5"
-	"$detailblendfactor"	"0"
-	"$detailblendmode"	"6"
-	"$yellow"		"0"
-	"$nocull" "1"
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
 
-	"proxies"
+	$nocull 1
+
+	$phong 1
+	$bumpmapalphaphongmask 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$phongexponent 25
+	$phongboost 0.1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$blendtintbybasealpha 1
+	$blendtintcoloroverbase 0
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
-		"AnimatedTexture"
+
+		YellowLevel
 		{
-			"animatedtexturevar"		"$detail"
-			"animatedtextureframenumvar"	"$detailframe"
-			"animatedtextureframerate"	"30"
+			resultVar "$yellow"
 		}
-		"BurnLevel"
+
+		Equals
 		{
-			"resultVar"		"$detailblendfactor"
-		}
-		"YellowLevel"
-		{
-			"resultVar"		"$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1"		"$yellow"
-			"resultVar"		"$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }

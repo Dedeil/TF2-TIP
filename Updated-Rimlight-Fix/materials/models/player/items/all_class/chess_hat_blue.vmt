@@ -1,49 +1,38 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/chess_hat_blue"
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
-	"$yellow" "0"
-	
-	"$basemapalphaphongmask" 1
-	
-	"$phong" "1"
-	"$phongexponent" "50"
-	"$phongboost" "2"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"	"[.15 1 4]"
+	$basetexture "models/player/items/all_class/chess_hat_blue"
 
-	"$rimlight" "1"
-	"$rimlightexponent" "4"
-	"$rimlightboost" ".5"
-	// Cloaking
-	"$cloakPassEnabled" "1"
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
 
-	"Proxies"
+	$phong 1
+	$phongfresnelranges "[0.15 1 4]"
+	$phongexponent 50
+	$phongboost 2
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
-		"AnimatedTexture"
+
+		YellowLevel
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			resultVar "$yellow"
 		}
-		"BurnLevel"
+
+		Equals
 		{
-			"resultVar" "$detailblendfactor"
-		}
-		"YellowLevel"
-		{
-			"resultVar" "$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }

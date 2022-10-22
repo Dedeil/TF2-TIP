@@ -1,61 +1,50 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/awes_badge"
-	"$bumpmap" "models/player/items/all_class/awes_badge_normal" 
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
-	"$yellow" "0"
+	$basetexture "models/player/items/all_class/awes_badge"
+	$bumpmap "models/player/items/all_class/awes_badge_normal"
 
-	">=DX90"
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
+
+	$envmap "env_cubemap"
+	$basealphaenvmapmask 1
+	$envmaptint "[0.70 0.70 0.70]"
+
+	$phong 1
+	$phongfresnelranges "[0.25 1 4]"
+	$phongexponent 8
+	$phongboost 2
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$selfillum 1
+	$selfillum_envmapmask_alpha 1
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	<DX90
 	{
-		"$selfillum" "1"
-		"$selfillum_envmapmask_alpha" "1"
+		$normalmapalphaenvmapmask "1"
 	}
 
-	"$phong" "1"
-	"$phongexponent" "8"
-	"$phongboost" "2"
-	"$lightwarptexture" "models/lightwarps/weapon_lightwarp"	
-	"$phongfresnelranges"	"[.25 1 4]"
-
-	"$envmap" "env_cubemap"
-	"$envmaptint" "[.7 .7 .7]"
-//	"$basealphaenvmapmask" 1 
-	"$normalmapalphaenvmapmask" 1
-
-	// Rim lighting parameters
-	"$rimlight" "1"				// To enable rim lighting (requires phong)
-	"$rimlightexponent" "4"			// Exponent for phong component of rim lighting	
-	"$rimlightboost" ".5"			// Boost for ambient cube component of rim lighting
-
-	// Cloaking
-	"$cloakPassEnabled" "1"
-	"Proxies"
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
-		"AnimatedTexture"
+
+		YellowLevel
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			resultVar "$yellow"
 		}
-		"BurnLevel"
+
+		Equals
 		{
-			"resultVar" "$detailblendfactor"
-		}
-		"YellowLevel"
-		{
-			"resultVar" "$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }
-

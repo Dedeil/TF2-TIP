@@ -1,49 +1,39 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models\player\items\all_class\all_class_oculus"
-	//"$bumpmap" "models\player\items\all_class\xms_allclass_beard_normal"
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
-	"$yellow" "0"
-	"$nocull" "1"
+	$basetexture "models/player/items/all_class/all_class_oculus"
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$nocull 1
+
+	$phong 1
+	$phongfresnelranges "[0.25 1 4]"
+	$phongexponent 50
+	$phongboost 0.2
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
 	
-	"$phong" "1"
-	"$phongexponent" "50"
-	"$phongboost" "0.2"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"	"[.25 1 4]"
-//	"$basemapalphaphongmask" "1"
+	$yellow 0
 
-	"$rimlight" "1"
-	"$rimlightexponent" "4"
-	"$rimlightboost" ".5"
-	// Cloaking
-	"$cloakPassEnabled" "1"
-
-	"Proxies"
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
-		"AnimatedTexture"
+
+		YellowLevel
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			resultVar "$yellow"
 		}
-		"BurnLevel"
+
+		Equals
 		{
-			"resultVar" "$detailblendfactor"
-		}
-		"YellowLevel"
-		{
-			"resultVar" "$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }

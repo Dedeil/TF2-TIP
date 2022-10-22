@@ -1,35 +1,60 @@
-"VertexLitGeneric"
+VertexLitGeneric
 {
-	"$basetexture" "models\player\spy\mask_mvm\mask_demo"
-//	"$bumpmap" "models/player/spy/spy_normal"
-		"$basemapalphaphongmask" "1"
-	
-	"$phong" "1"
-	"$phongboost" ".2"	
-	"$phongexponent" "10"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"	"[.7 15 20]"
-	"$halflambert" "1"
-	
-	// Rim lighting parameters
-	"$rimlight" "1"												// To enable rim lighting (requires phong)
-	"$rimlightexponent" "4"										// Exponent for phong component of rim lighting	
-	"$rimlightboost" ".5"										// Boost for ambient cube component of rim lighting
+	$basetexture "models/player/spy/mask_mvm/mask_demo"
 
-	// Cloaking
-	"$cloakPassEnabled" "1"
-	"$cloakColorTint" "[0.4 0.5 1]"
-	"Proxies"
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
+
+	$phong 1
+	$phongfresnelranges "[0.7 15 20]"
+	$halflambert 1
+	$phongexponent 10
+	$phongboost 0.2
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	Proxies
 	{
-		"spy_invis"
+		spy_invis
 		{
-		}
-		"AnimatedTexture"
-		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
 		}
 
+		invis
+		{
+		}
+
+		AnimatedTexture
+		{
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
+		}
+
+		BurnLevel
+		{
+			resultVar "$detailblendfactor"
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Equals
+		{
+			srcVar1 "$yellow"
+			resultVar "$color2"
+		}
 	}
 }

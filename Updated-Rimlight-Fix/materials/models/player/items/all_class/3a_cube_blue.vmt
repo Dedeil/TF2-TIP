@@ -1,56 +1,40 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/3a_cube_blue"
-	"$bumpmap" "models/effects/flat_normal" 
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
-	"$yellow" "0"
+	$basetexture "models/player/items/all_class/3a_cube_blue"
+	$bumpmap "models/effects/flat_normal"
 
-	"$phong" "1"
-	"$phongexponent" "30"
-	"$phongboost" "5"
-//	"$lightwarptexture" "models/lightwarps/weapon_lightwarp"	
-	"$phongfresnelranges"	"[.1 .5 2]"
-	"$basemapalphaphongmask" "1"
+	$envmap "env_cubemap"
+	$envmaptint "[0.10 0.10 0.10]"
 
-	"$envmap" "env_cubemap"
-	"$envmaptint" "[.1 .1 .1]"
-//	"$basealphaenvmapmask" 1 
+	$phong 1
+	$phongfresnelranges "[0.1 0.5 2]"
+	$phongexponent 30
+	$phongboost 5
+	$basemapalphaphongmask 1
 
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 
-	// Rim lighting parameters
-	"$rimlight" "1"												// To enable rim lighting (requires phong)
-	"$rimlightexponent" "4"										// Exponent for phong component of rim lighting	
-	"$rimlightboost" ".5"										// Boost for ambient cube component of rim lighting
+	$cloakpassenabled 1
 
-	// Cloaking
-	"$cloakPassEnabled" "1"
-	"Proxies"
+	$yellow 0
+
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
-		}
-		"AnimatedTexture"
-		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
-		}
-		"BurnLevel"
-		{
-			"resultVar" "$detailblendfactor"
-		}
-		"YellowLevel"
-		{
-			"resultVar" "$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
 		}
 
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Equals
+		{
+			srcVar1 "$yellow"
+			resultVar "$color2"
+		}
 	}
 }

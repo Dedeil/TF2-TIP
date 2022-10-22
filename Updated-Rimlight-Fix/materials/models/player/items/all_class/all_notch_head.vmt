@@ -1,46 +1,46 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/all_notch_head"
+	$basetexture "models/player/items/all_class/all_notch_head"
 
-//	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
-//	"$detailscale" "5"
-//	"$detailblendfactor" .01
-	"$detailblendmode" 6
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
 
-	"$yellow" "0"
+	$phong 1
+	$phongfresnelranges "[0.25 1 4]"
+	$phongexponent 5
 
-	"$phong" "1"
-	"$phongexponent" "5"
-	"$phongboost" "1"
-//	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
-	"$phongfresnelranges"	"[.25 1 4]"
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 
+	$cloakpassenabled 1
 
-	// Rim lighting parameters
-	"$rimlight" "1"												// To enable rim lighting (requires phong)
-	"$rimlightexponent"	 "4"										// Exponent for phong component of rim lighting	
-	"$rimlightboost" ".5"
+	$yellow 0
 
-
-	// Cloaking
-	"$cloakPassEnabled" "1"
-	"Proxies"
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
-		"BurnLevel"
+
+		AnimatedTexture
 		{
-			"resultVar" "$detailblendfactor"
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
 		}
-		"YellowLevel"
+
+		YellowLevel
 		{
-			"resultVar" "$yellow"
+			resultVar "$yellow"
 		}
-		"Equals"
+
+		Equals
 		{
-			"srcVar1"  "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }

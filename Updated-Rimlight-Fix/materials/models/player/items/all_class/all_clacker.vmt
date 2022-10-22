@@ -1,49 +1,37 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/all_clacker"
-	"$basemapalphaphongmask" "1"
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"
-	"$detailscale" "5"
-	"$detailblendfactor" 0.01
-	"$detailblendmode" 6
+	$basetexture "models/player/items/all_class/all_clacker"
 
-	"$yellow" "0"
-	"$lightwarptexture" "models/lightwarps/weapon_lightwarp"
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
 
-	"$phong" "1"
-	"$phongexponent" "4"
-	"$phongboost" "1"
-	"$phongfresnelranges" "[.50 .5 1]"
-	
-	"$rimlight" "1"
-	"$rimlightexponent"	 "4"
-	"$rimlightboost" ".5"
-       
-	"Proxies"
+	$phong 1
+	$phongfresnelranges "[0.5 0.5 1]"
+	$phongexponent 4
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
 
-		"AnimatedTexture"
+		YellowLevel
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
-		}
-		"BurnLevel"
-		{
-			"resultVar" "$detailblendfactor"
+			resultVar "$yellow"
 		}
 
-		"YellowLevel"
+		Equals
 		{
-			"resultVar" "$yellow"
-		}
-		"Equals"
-		{
-			"srcVar1" "$yellow"
-			"resultVar" "$color2"
+			srcVar1 "$yellow"
+			resultVar "$color2"
 		}
 	}
 }

@@ -33,6 +33,10 @@ VertexLitGeneric
 		{
 		}
 
+		invis
+		{
+		}
+
 		AnimatedTexture
 		{
 			animatedtexturevar "$detail"

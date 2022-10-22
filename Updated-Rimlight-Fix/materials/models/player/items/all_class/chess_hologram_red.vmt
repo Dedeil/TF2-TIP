@@ -1,36 +1,33 @@
-"UnLitTwoTexture"
+UnlitTwoTexture
 {
-	"$basetexture"	"models/player/items/all_class/chess_hologram_red"
-	"$texture2"	"models/effects/cappoint_beam_lines_r"
-	"$additive" "1"
-	"$model" "1"
+	$basetexture "models/player/items/all_class/chess_hologram_red"
+	$texture2 "models/effects/cappoint_beam_lines_r"
 
-	"$rimlight" "1"						
-	"$rimlightexponent"	 "4"				
-	"$rimlightboost" ".5"
-	"$rimmask" "1"
-	
-	// Cloaking
-	"$cloakPassEnabled" "1"
+	$additive 1
 
-	"Proxies"
+	$model 1
+
+	$cloakpassenabled 1
+
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
 
-		"TextureScroll"
+		TextureScroll
 		{
-			"texturescrollvar" "$texture2transform"
-			"texturescrollrate" .1
-			"texturescrollangle" 90
+			texturescrollvar "$texture2transform"
+			texturescrollrate .1
+			texturescrollangle 90
 		}
-		"Sine"
+
+		Sine
 		{
-			"Sineperiod" ".05"
-			"SineMax" "1"
-			"SineMin" ".8"
-			"resultVar" "$color"
+			Sineperiod .05
+			SineMax 1
+			SineMin .8
+			resultVar "$color"
 		}
 	}
 }

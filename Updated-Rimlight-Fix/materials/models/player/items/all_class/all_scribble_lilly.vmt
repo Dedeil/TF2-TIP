@@ -1,73 +1,57 @@
-"VertexlitGeneric"
+VertexLitGeneric
 {
-	"$baseTexture" "models/player/items/all_class/all_scribble_lilly"
-	"$bumpmap" "models/player/items/all_class/all_scribble_lilly_normal"
-	"$nocull" "1"
+	$basetexture "models/player/items/all_class/all_scribble_lilly"
+	$bumpmap "models/player/items/all_class/all_scribble_lilly_normal"
 
-	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
-	"$detailscale" "5"
-	"$detailblendfactor" .01
-	"$detailblendmode" 6
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
 
-	"$yellow" "0"
-	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	$detail "effects/tiledfire/firelayeredslowtiled512"
+	$detailblendmode 6
+	$detailscale 5
+	$detailblendfactor 0
 
-	"$colortint_base" "{208 135 137}"
-	"$color2" "{208 135 137}"
-	"$colortint_tmp" "[0 0 0]"
+	$nocull 1
 
- 	"$blendtintbybasealpha" "1" 
-	"$blendtintcoloroverbase" "1"  
-		
-	"$phong" "1"
-	"$phongexponent" "5"
-	"$phongboost" "2"
-	"$phongfresnelranges" "[.4 1 12]"
-	"$basemapalphaphongmask" "0"
-	"$rimlight" "1"
-	"$rimlightexponent" "4"
-	"$rimlightboost" ".5"
+	$phong 1
+	$phongfresnelranges "[0.4 1 12]"
+	$phongexponent 5
+	$phongboost 2
 
-	"$cloakPassEnabled" "1"
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
 
-	"Proxies"
+	$blendtintbybasealpha 1
+	$blendtintcoloroverbase 1
+
+	$cloakpassenabled 1
+
+	$colortint_base "{208 135 137}"
+	$colortint_tmp "[0 0 0]"
+
+	Proxies
 	{
-		"weapon_invis"
+		weapon_invis
 		{
 		}
 
-		"AnimatedTexture"
+		AnimatedTexture
 		{
-			"animatedtexturevar" "$detail"
-			"animatedtextureframenumvar" "$detailframe"
-			"animatedtextureframerate" 30
+			animatedtexturevar "$detail"
+			animatedtextureframenumvar "$detailframe"
+			animatedtextureframerate 30
 		}
 
-		"BurnLevel"
+		ItemTintColor
 		{
-			"resultVar" "$detailblendfactor"
+			resultVar "$colortint_tmp"
 		}
 
-		"YellowLevel"
+		SelectFirstIfNonZero
 		{
-			"resultVar" "$yellow"
-		}
-
-		"Equals"
-		{
-			"srcVar1" "$yellow"
-			"resultVar" "$color2"
-		}
-
-		"ItemTintColor"
-		{
-		                "resultVar" "$colortint_tmp"
-		}
-		"SelectFirstIfNonZero"
-		{
-		                "srcVar1"             "$colortint_tmp"
-		                "srcVar2"             "$colortint_base"
-		                "resultVar" "$color2"
+			srcVar1 "$colortint_tmp"
+			srcVar2 "$colortint_base"
+			resultVar "$color2"
 		}
 	}
 }
