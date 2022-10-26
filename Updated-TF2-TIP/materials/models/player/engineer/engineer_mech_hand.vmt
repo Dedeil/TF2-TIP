@@ -1,0 +1,56 @@
+VertexLitGeneric
+{
+	$basetexture "models/player/engineer/engineer_mech_hand"
+	$bumpmap "models/player/engineer/engineer_mech_hand_phongmask"
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.3 1 8]"
+	$phongexponent 20
+	$phongboost 0.3
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$sheenpassenabled 1
+	$sheenindex 0
+	$sheenmap "cubemaps/cubemap_sheen001"
+	$sheenmapmask "effects/animatedsheen/animatedsheen0"
+	$sheenmapmaskframe 0
+	$sheenmaptint "[ 1 1 1 ]"
+
+	$yellow 0
+
+	Proxies
+	{
+		AnimatedWeaponSheen
+		{
+			animatedtexturevar "$sheenmapmask"
+			animatedtextureframenumvar "$sheenmapmaskframe"
+			animatedtextureframerate 40
+		}
+
+		spy_invis
+		{
+		}
+
+		invis
+		{
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Equals
+		{
+			srcVar1 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

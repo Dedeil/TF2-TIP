@@ -31,10 +31,6 @@ VertexLitGeneric
 		{
 		}
 
-		vm_invis
-		{
-		}
-
 		AnimatedTexture
 		{
 			animatedtexturevar "$detail"

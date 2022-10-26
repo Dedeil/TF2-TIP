@@ -1,0 +1,40 @@
+VertexLitGeneric
+{
+	$basetexture "models/bots/gameplay_cosmetic/bot_light_chest"
+	$bumpmap "models/player/shared/shared_normal"
+	$surfaceprop Metal
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.3 1 8]"
+	$phongexponent 4
+	$phongboost 0.5
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$yellow 0
+
+	Proxies
+	{
+		weapon_invis
+		{
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Equals
+		{
+			srcVar1 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

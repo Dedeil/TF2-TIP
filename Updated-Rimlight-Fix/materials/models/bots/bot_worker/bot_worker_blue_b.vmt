@@ -1,0 +1,22 @@
+VertexLitGeneric
+{
+	$basetexture "models/bots/bot_worker/bot_worker_blue_b"
+	$surfaceprop Metal
+
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$halflambert 1
+	$phongexponent 125
+	$phongboost 5
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$selfillum 1
+	$selfillumfresnel 1
+	$selfillumfresnelminmaxexp "[0 1 12]"
+	$selfillumtint "[3.40 3.40 3.30]"
+}

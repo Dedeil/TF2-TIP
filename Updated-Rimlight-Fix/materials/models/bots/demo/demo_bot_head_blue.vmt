@@ -2,6 +2,7 @@ VertexLitGeneric
 {
 	$basetexture "models/bots/demo/demo_bot_head_blue"
 	$bumpmap "models/bots/demo/demo_bot_head_normal"
+	$surfaceprop Metal
 
 	$lightwarptexture "models/lightwarps/robot_lightwarp"
 

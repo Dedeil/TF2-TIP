@@ -2,6 +2,7 @@ VertexLitGeneric
 {
 	$basetexture "models/bots/demo/demo_buster"
 	$bumpmap "models/bots/demo/demo_buster_normal"
+	$surfaceprop Metal
 
 	$lightwarptexture "models/lightwarps/robot_lightwarp"
 
@@ -12,7 +13,7 @@ VertexLitGeneric
 
 	$phong 1
 	$phongfresnelranges "[0.5 0.7 1]"
-	$phongexponent 20
+	$phongexponent 200
 	$phongboost 4
 	$basemapalphaphongmask 1
 
@@ -26,11 +27,6 @@ VertexLitGeneric
 	$cloakpassenabled 1
 
 	$yellow 0
-
-	<dx90
-	{
-		$selfillum 0
-	}
 
 	Proxies
 	{

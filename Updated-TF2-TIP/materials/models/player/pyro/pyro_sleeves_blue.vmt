@@ -1,0 +1,26 @@
+VertexLitGeneric
+{
+	$basetexture "models/player/pyro/pyro_blue"
+	$bumpmap "models/player/pyro/pyro_normal"
+
+	$lightwarptexture "models/player/pyro/pyro_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[2 1 5]"
+	$halflambert 1
+	$phongexponent 15
+	$phongboost 0.4
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	Proxies
+	{
+		vm_invis
+		{
+		}
+	}
+}

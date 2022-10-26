@@ -1,6 +1,7 @@
 VertexLitGeneric
 {
 	$basetexture "models/bots/engineer/engineer_bot_blue"
+	$surfaceprop Metal
 
 	$lightwarptexture "models/lightwarps/robot_lightwarp"
 
