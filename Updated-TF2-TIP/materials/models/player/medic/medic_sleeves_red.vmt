@@ -1,14 +1,9 @@
 VertexLitGeneric
 {
-	$basetexture "models/player/medic/medic_blue"
+	$basetexture "models/player/medic/medic_red"
 	$bumpmap "models/player/medic/medic_normal"
 
 	$lightwarptexture "models/player/pyro/pyro_lightwarp"
-
-	$detail "effects/tiledfire/firelayeredslowtiled512"
-	$detailblendmode 6
-	$detailscale 5
-	$detailblendfactor 0
 
 	$phong 1
 	$phongfresnelranges "[0.3 1 8]"
@@ -22,36 +17,11 @@ VertexLitGeneric
 
 	// Cloaking
 	$cloakpassenabled 1
-	
-	$yellow 0
 
 	Proxies
 	{
-		spy_invis
+		vm_invis
 		{
-		}
-
-		AnimatedTexture
-		{
-			animatedtexturevar "$detail"
-			animatedtextureframenumvar "$detailframe"
-			animatedtextureframerate 30
-		}
-
-		BurnLevel
-		{
-			resultVar "$detailblendfactor"
-		}
-
-		YellowLevel
-		{
-			resultVar "$yellow"
-		}
-
-		Equals
-		{
-			srcVar1 "$yellow"
-			resultVar "$color2"
 		}
 	}
 }
