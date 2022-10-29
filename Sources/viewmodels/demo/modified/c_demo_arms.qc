@@ -2,10 +2,7 @@
 
 $modelname "c_demo_arms.mdl"
 
-$bodygroup "c_demo_arms"
-{
-	studio "c_demo_arms.smd"
-}
+$body "c_demo_arms" "c_demo_arms.smd"
 
 $cdmaterials "models\player\demo\"
 
@@ -208,7 +205,7 @@ $weightlist "weights_r_handposes" {
 }
 
 $sequence "c_demo_arms" {
-	"c_demo_arms_anims\c_demo_arms.smd"
+	"../decompiled/c_demo_arms_anims\c_demo_arms.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30

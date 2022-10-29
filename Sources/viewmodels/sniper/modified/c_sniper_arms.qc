@@ -2,11 +2,7 @@
 
 $modelname "c_sniper_arms.mdl"
 
-$bodygroup "body"
-{
-	studio "c_sniper_arms.smd"
-}
-
+$body "body" "c_sniper_arms.smd"
 
 $cdmaterials "models\player\sniper\"
 
@@ -181,7 +177,7 @@ $weightlist "weights_r_handposes" {
 }
 
 $sequence "ref" {
-	"c_sniper_arms_anims\ref.smd"
+	"../decompiled/c_sniper_arms_anims\ref.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30

@@ -2,12 +2,7 @@
 
 $modelname "c_medic_arms.mdl"
 
-$bodygroup "body"
-{
-	studio "c_medic_arms.smd"
-}
-
-
+$body "body" studio "c_medic_arms.smd"
 
 $cdmaterials "models\player\medic\"
 
@@ -177,7 +172,7 @@ $weightlist "weights_r_handposes" {
 }
 
 $sequence "c_medic_arms" {
-	"c_medic_arms_anims\c_medic_arms.smd"
+	"../decompiled/c_medic_arms_anims\c_medic_arms.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30

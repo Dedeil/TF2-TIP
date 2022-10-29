@@ -2,14 +2,11 @@
 
 $modelname "c_engineer_arms.mdl"
 
-$bodygroup "c_engineer_arms"
-{
-	studio "c_engineer_arms.dmx.smd"
-}
+$body "c_engineer_arms" "c_engineer_arms.dmx.smd"
 $bodygroup "rightarm"
 {
-	studio "c_glove_bodygroup.dmx.smd"
-	studio "UnknownModelName.smd"
+	studio "../decompiled/c_glove_bodygroup.smd"
+	studio "../decompiled/UnknownModelName.smd"
 }
 
 $cdmaterials "models\player\engineer\"
@@ -99,7 +96,7 @@ $definebone "bip_twist_R" "bip_lowerArm_R" 0 5.300001 0 0.000001 0.000002 0.0000
 
 
 $sequence "c_engineer_arms" {
-	"c_engineer_arms_anims\c_engineer_arms.smd"
+	"../decompiled/c_engineer_arms_anims\c_engineer_arms.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30

@@ -2,13 +2,10 @@
 
 $modelname "c_pyro_arms.mdl"
 
-$bodygroup "body"
-{
-	studio "c_pyro_arms.smd"
-}
+$body "body"  "c_pyro_arms.smd"
 $bodygroup "righthand"
 {
-	studio "righthand_bodygroup.smd"
+	studio "../decompiled/righthand_bodygroup.smd"
 	blank
 }
 
@@ -196,7 +193,7 @@ $weightlist "weights_r_handposes" {
 }
 
 $sequence "c_pyro_arms" {
-	"c_pyro_arms_anims\c_pyro_arms.smd"
+	"../decompiled/c_pyro_arms_anims\c_pyro_arms.smd"
 	fadein 0.2
 	fadeout 0.2
 	fps 30
