@@ -20,42 +20,10 @@ VertexLitGeneric
 	// Cloaking
 	$cloakpassenabled 1
 
-	$glowcolor 1
-	$sheenindex 0
-	$sheenmap "cubemaps\cubemap_sheen001"
-	$sheenmapmask "effects\animatedsheen\animatedsheen0"
-	$sheenmapmaskframe 0
-	$sheenmaptint "[ 1 1 1 ]"
-	$sheenpassenabled 1
-
 	Proxies
 	{
-		AnimatedWeaponSheen
+		vm_invis
 		{
-			animatedtexturevar "$sheenmapmask"
-			animatedtextureframenumvar "$sheenmapmaskframe"
-			animatedtextureframerate 40
-		}
-
-		invis
-		{
-		}
-
-		ModelGlowColor
-		{
-			resultVar "$glowcolor"
-		}
-
-		Equals
-		{
-			srcVar1 "$glowcolor"
-			resultVar "$selfillumtint"
-		}
-
-		Equals
-		{
-			srcVar1 "$glowcolor"
-			resultVar "$color2"
 		}
 	}
 }

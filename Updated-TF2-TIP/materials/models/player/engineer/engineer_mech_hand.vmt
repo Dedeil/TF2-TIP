@@ -38,10 +38,6 @@ VertexLitGeneric
 		{
 		}
 
-		invis
-		{
-		}
-
 		YellowLevel
 		{
 			resultVar "$yellow"

@@ -8,7 +8,7 @@ VertexLitGeneric
 	$detail "effects/tiledfire/firelayeredslowtiled512"
 	$detailblendmode 6
 	$detailscale 1
-	$detailblendfactor 0.01
+	$detailblendfactor 0
 
 	$phong 1
 	$phongexponenttexture "models/player/soldier/hwm/soldier_head_exponent"
@@ -17,11 +17,10 @@ VertexLitGeneric
 	// Rim lighting parameters
 	$rimlight 1				// To enable rim lighting (requires phong)
 	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 1		// Boost for ambient cube component of rim lighting
+	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
 	$rimmask 1				// Use the alpha channel of the $phongexponenttexture as a rim mask.
 
 	// Cloaking
-	$cloakcolortint "[1 0.5 0.4]"
 	$cloakpassenabled 1
 	
 	$yellow 0

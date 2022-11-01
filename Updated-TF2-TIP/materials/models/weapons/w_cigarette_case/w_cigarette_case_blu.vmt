@@ -1,29 +1,16 @@
-VertexLitGeneric
+Patch
 {
-	$basetexture "models/weapons/v_cigarette_case/v_cigarette_case_blu"
-	$bumpmap "models/weapons/v_cigarette_case/v_cigarette_case_normal"
+	include "materials/models/weapons/v_cigarette_case/v_cigarette_case.vmt"
 
-	$lightwarptexture "models/lightwarps/weapon_lightwarp"
-
-	$phong 1
-	$phongfresnelranges "[0.25 2 1]"
-	$phongexponent 25
-	$phongboost 6
-
-	// Rim lighting parameters
-	$rimlight 1				// To enable rim lighting (requires phong)
-	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
-
-	$selfillum 1
-
-	// Cloaking
-	$cloakpassenabled 1
-
-	Proxies
+	insert
 	{
-		weapon_invis
+		$basetexture "models/weapons/v_cigarette_case/v_cigarette_case_blu"
+
+		Proxies
 		{
+			vm_invis
+			{
+			}
 		}
 	}
 }

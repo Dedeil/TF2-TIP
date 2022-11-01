@@ -1,56 +1,11 @@
-VertexLitGeneric
+Patch
 {
-	$basetexture "models/player/items/spy/spy_winterjacket_blue"
-	$bumpmap "models/player/items/spy/spy_winterjacket_normal"
+	include "materials/models/player/items/spy/spy_winterjacket.vmt"
 
-	$lightwarptexture "models/player/pyro/pyro_lightwarp"
-
-	$detail "effects/tiledfire/firelayeredslowtiled512"
-	$detailblendmode 6
-	$detailscale 5
-	$detailblendfactor 0
-
-	$phong 1
-	$phongfresnelranges "[0.3 1 8]"
-	$phongexponent 5
-
-	// Rim lighting parameters
-	$rimlight 1				// To enable rim lighting (requires phong)
-	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
-
-	$blendtintbybasealpha 1
-	$blendtintcoloroverbase 1
-
-	// Cloaking
-	$cloakpassenabled 1
-
-	$colortintbase "{24 35 45}"
-	$colortinttemp 0
-
-	Proxies
+	insert
 	{
-		spy_invis
-		{
-		}
+		$basetexture "models/player/items/spy/spy_winterjacket_blue"
 
-		AnimatedTexture
-		{
-			animatedtexturevar "$detail"
-			animatedtextureframenumvar "$detailframe"
-			animatedtextureframerate 30
-		}
-
-		ItemTintColor
-		{
-			resultVar "$colorTintTemp"
-		}
-
-		SelectFirstIfNonZero
-		{
-			srcVar1 "$colorTintTemp"
-			srcVar2 "$colorTintBase"
-			resultVar "$color2"
-		}
+		$colortintbase "{24 35 45}"
 	}
 }

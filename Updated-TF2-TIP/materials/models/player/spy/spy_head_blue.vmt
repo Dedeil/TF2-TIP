@@ -1,58 +1,9 @@
-VertexLitGeneric
+Patch
 {
-	$basetexture "models/player/spy/spy_head_blue"
-	$bumpmap "models/player/spy/hwm/spy_head_phongmask"
+	include "materials/models/player/spy/spy_head_red.vmt"
 
-	$lightwarptexture "models/player/pyro/pyro_lightwarp"
-
-	$detail "effects/tiledfire/firelayeredslowtiled512"
-	$detailblendmode 6
-	$detailscale 1
-	$detailblendfactor 0.01
-
-	$phong 1
-	$phongexponenttexture "models/player/spy/hwm/spy_head_exponent"
-	$phongfresnelranges "[0.3 1 8]"
-
-	// Rim lighting parameters
-	$rimlight 1				// To enable rim lighting (requires phong)
-	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
-	$rimmask 1				// Use the alpha channel of the $phongexponenttexture as a rim mask.
-
-	// Cloaking
-	$cloakcolortint "[0.4 0.5 1]"
-	$cloakpassenabled 1
-	
-	$yellow 0
-
-	Proxies
+	insert
 	{
-		spy_invis
-		{
-		}
-
-		AnimatedTexture
-		{
-			animatedtexturevar "$detail"
-			animatedtextureframenumvar "$detailframe"
-			animatedtextureframerate 30
-		}
-
-		BurnLevel
-		{
-			resultVar "$detailblendfactor"
-		}
-
-		YellowLevel
-		{
-			resultVar "$yellow"
-		}
-
-		Equals
-		{
-			srcVar1 "$yellow"
-			resultVar "$color2"
-		}
+		$basetexture "models/player/spy/spy_head_blue"
 	}
 }

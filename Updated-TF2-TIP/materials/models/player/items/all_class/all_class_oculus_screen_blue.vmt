@@ -1,25 +1,9 @@
-UnlitGeneric
+Patch
 {
-	$basetexture "models/player/items/all_class/all_class_oculus_screen_blue"
+	include "models/player/items/all_class/all_class_oculus_screen.vmt"
 
-	$additive 1
-	$nocull 1
-
-	Proxies
+	insert
 	{
-		TextureScroll
-		{
-			texturescrollvar "$basetexturetransform"
-			texturescrollrate .05
-			texturescrollangle 90
-		}
-
-		Sine
-		{
-			Sineperiod 2
-			SineMax 1.5
-			SineMin .5
-			resultVar "$color"
-		}
+		$basetexture "models/player/items/all_class/all_class_oculus_screen_blue"
 	}
 }

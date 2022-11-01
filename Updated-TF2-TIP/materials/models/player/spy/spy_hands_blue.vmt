@@ -1,28 +1,9 @@
-VertexLitGeneric
+Patch
 {
-	$basetexture "models/player/spy/spy_hands_blue"
-	$bumpmap "models/player/spy/spy_hands_normal"
+	include "materials/models/player/spy/spy_hands_red.vmt"
 
-	$lightwarptexture "models/player/pyro/pyro_lightwarp"
-
-	$phong 1
-	$phongfresnelranges "[0.5 0.5 10]"
-	$halflambert 1
-	$phongexponent 5
-	$phongboost 0.25
-
-	// Rim lighting parameters
-	$rimlight 1				// To enable rim lighting (requires phong)
-	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
-
-	// Cloaking
-	$cloakpassenabled 1
-
-	Proxies
+	insert
 	{
-		vm_invis
-		{
-		}
+		$basetexture "models/player/spy/spy_hands_blue"
 	}
 }

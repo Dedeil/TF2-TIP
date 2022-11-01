@@ -1,20 +1,11 @@
-VertexLitGeneric
+Patch
 {
-	$basetexture "models/props_trainyard/cart_dispenser"
+	include "materials/models/props_trainyard/cart_dispenser_red.vmt"
 
-	$lightwarptexture "models/buildables/sentry1/sentry1_lightwarp"
+	insert
+	{
+		$basetexture "models/props_trainyard/cart_dispenser"
 
-	$phong 1
-	$phongfresnelranges "[2 1 6]"
-	$phongexponent 7
-	$phongboost 0.5
-	$basemapalphaphongmask 1
-
-	// Rim lighting parameters
-	$rimlight 1				// To enable rim lighting (requires phong)
-	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 1.5		// Boost for ambient cube component of rim lighting
-
-	$selfillum 1
-	$selfillummask "models/props_trainyard/cart_selfillum"
+		$selfillum 1
+	}
 }

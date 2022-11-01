@@ -1,55 +1,11 @@
-VertexLitGeneric
+Patch
 {
-	$basetexture "models/player/items/spy/spy_openjacket_blue"
-	$bumpmap "models/player/items/spy/spy_openjacket_normal"
+	include "materials/models/player/items/spy/spy_openjacket.vmt"
 
-	$lightwarptexture "models/player/pyro/pyro_lightwarp"
-
-	$detail "effects/tiledfire/firelayeredslowtiled512"
-	$detailblendmode 6
-	$detailscale 5
-	$detailblendfactor 0
-
-	$phong 1
-	$phongfresnelranges "[0.3 1 8]"
-	$phongexponent 5
-
-	// Rim lighting parameters
-	$rimlight 1				// To enable rim lighting (requires phong)
-	$rimlightexponent 4		// Exponent for phong component of rim lighting	
-	$rimlightboost 0.5		// Boost for ambient cube component of rim lighting
-
-	$blendtintbybasealpha 1
-
-	// Cloaking
-	$cloakpassenabled 1
-	
-	$colortint_base "{34 43 68}"
-	$colortint_tmp 0
-
-	Proxies
+	insert
 	{
-		spy_invis
-		{
-		}
+		$basetexture "models/player/items/spy/spy_openjacket_blue"
 
-		AnimatedTexture
-		{
-			animatedtexturevar "$detail"
-			animatedtextureframenumvar "$detailframe"
-			animatedtextureframerate 30
-		}
-
-		ItemTintColor
-		{
-			resultVar "$colortint_tmp"
-		}
-
-		SelectFirstIfNonZero
-		{
-			srcVar1 "$colortint_tmp"
-			srcVar2 "$colortint_base"
-			resultVar "$color2"
-		}
+		$colortint_base "{34 43 68}"
 	}
 }

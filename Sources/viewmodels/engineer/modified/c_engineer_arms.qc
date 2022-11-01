@@ -5,9 +5,11 @@ $modelname "c_engineer_arms.mdl"
 $body "c_engineer_arms" "c_engineer_arms.dmx.smd"
 $bodygroup "rightarm"
 {
-	studio "../decompiled/c_glove_bodygroup.smd"
+	studio "../decompiled/c_glove_bodygroup.dmx.smd"
 	studio "../decompiled/UnknownModelName.smd"
 }
+
+$illumposition 0.321 -1.692 45.795
 
 $cdmaterials "models\player\engineer\"
 

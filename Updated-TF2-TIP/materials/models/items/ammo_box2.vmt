@@ -1,5 +1,6 @@
 VertexLitGeneric
 {
+	$basetexture "models/items/ammo_box2_noalpha"
 
 	$lightwarptexture "models/buildables/sentry1/sentry1_lightwarp"
 
@@ -19,7 +20,6 @@ VertexLitGeneric
 	// Use separate self-illum mask on Post DX9 hardware
 	>=DX90
 	{
-		$basetexture 	"models/items/ammo_box2_noalpha"
 		$selfillummask 	"models/items/item_selfillum"
 	}
 
