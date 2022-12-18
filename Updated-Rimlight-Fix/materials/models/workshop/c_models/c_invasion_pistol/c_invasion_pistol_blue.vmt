@@ -1,0 +1,9 @@
+Patch
+{
+	include "materials/models/workshop/weapons/c_models/c_invasion_pistol/c_invasion_pistol.vmt"
+
+	insert
+	{
+		$basetexture "models/workshop/weapons/c_models/c_invasion_pistol/c_invasion_pistol_blue"
+	}
+}

@@ -1,7 +1,0 @@
-VertexLitGeneric
-{
-	$basetexture "models/bots/boss_bot/tank_eye"
-	$surfaceprop Glass
-
-	$selfillum 1
-}

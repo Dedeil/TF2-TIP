@@ -1,0 +1,83 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/c_models/c_scattergun/c_scattergun"
+
+	$lightwarptexture "models/lightwarps/softened_weapon_lightwarp"
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.09 0.09 0.09]"
+
+	$phong 1
+	$phongexponenttexture "models/weapons/c_models/c_scattergun/c_scattergun_exp"
+	$phongexponentfactor 195
+	$phongfresnelranges "[0.3 0.5 3]"
+	$halflambert 1
+	$phongalbedotint 1
+	$phongboost 6
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+	$rimmask 1
+
+	$cloakpassenabled 1
+
+	$glowcolor 1
+
+	$sheenpassenabled 1
+	$sheenindex 0
+	$sheenmap "cubemaps/cubemap_sheen001"
+	$sheenmapmask "effects/animatedsheen/animatedsheen0"
+	$sheenmapmaskframe 0
+	$sheenmaptint "[ 1 1 1 ]"
+
+	$yellow 0
+
+	Proxies
+	{
+		AnimatedWeaponSheen
+		{
+			animatedtexturevar "$sheenmapmask"
+			animatedtextureframenumvar "$sheenmapmaskframe"
+			animatedtextureframerate 40
+		}
+
+		invis
+		{
+		}
+
+		ModelGlowColor
+		{
+			resultVar "$glowcolor"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$selfillumtint"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Multiply
+		{
+			srcVar1 "$color2"
+			srcVar2 "$yellow"
+			resultVar "$color2"
+		}
+
+		WeaponSkin
+		{
+		}
+	}
+}

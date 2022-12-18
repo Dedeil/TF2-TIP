@@ -1,0 +1,9 @@
+Patch
+{
+	include "materials/models/workshop/weapons/c_models/c_crossing_guard/c_crossing_guard_lights.vmt"
+
+	insert
+	{
+		$basetexture "models/workshop/weapons/c_models/c_crossing_guard/c_crossing_guard_lights_blue"
+	}
+}

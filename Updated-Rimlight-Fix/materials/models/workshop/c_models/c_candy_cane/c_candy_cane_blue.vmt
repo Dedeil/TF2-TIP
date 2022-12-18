@@ -1,0 +1,9 @@
+Patch
+{
+	include "materials/models/workshop/weapons/c_models/c_candy_cane/c_candy_cane_red.vmt"
+
+	insert
+	{
+		$basetexture "models/workshop/weapons/c_models/c_candy_cane/c_candy_cane_blue"
+	}
+}

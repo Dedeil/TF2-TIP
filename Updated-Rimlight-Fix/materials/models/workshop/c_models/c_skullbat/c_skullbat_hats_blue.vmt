@@ -1,0 +1,9 @@
+Patch
+{
+	include "materials/models/workshop/weapons/c_models/c_skullbat/c_skullbat_hats.vmt"
+
+	insert
+	{
+		$basetexture "models/workshop/weapons/c_models/c_skullbat/c_skullbat_hats"
+	}
+}

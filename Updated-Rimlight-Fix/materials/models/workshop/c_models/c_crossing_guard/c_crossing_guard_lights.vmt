@@ -1,0 +1,60 @@
+VertexLitGeneric
+{
+	$basetexture "models/workshop/weapons/c_models/c_crossing_guard/c_crossing_guard_lights"
+
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.3 0.5 3]"
+	$phongexponent 10
+	$phongboost 0.2
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$selfillum 1
+
+	$cloakpassenabled 1
+
+	$glowcolor 1
+
+	$yellow 0
+
+	Proxies
+	{
+		invis
+		{
+		}
+
+		AnimatedTexture
+		{
+			animatedtexturevar "$basetexture"
+			animatedtextureframenumvar "$frame"
+			animatedtextureframerate 1
+		}
+
+		ModelGlowColor
+		{
+			resultVar "$glowcolor"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Multiply
+		{
+			srcVar1 "$color2"
+			srcVar2 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+Patch
+{
+	include "materials/models/weapons/c_items/c_energydrink.vmt"
+
+	insert
+	{
+		$basetexture "models/weapons/c_items/c_energydrink_purp"
+	}
+}
