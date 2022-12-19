@@ -1,0 +1,78 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/c_items/c_breadmonster"
+	$bumpmap "models/weapons/c_items/c_breadmonster_normal"
+
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.50 0.50 0.50]"
+
+	$phong 1
+	$phongexponenttexture "models/weapons/c_items/c_breadmonster_exp"
+	$phongfresnelranges "[2 1 4]"
+	$phongboost 2
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+	$rimmask 1
+
+	$selfillum 1
+
+	$cloakpassenabled 1
+
+	$glowcolor 1
+
+	$sheenpassenabled 1
+	$sheenindex 0
+	$sheenmap "cubemaps\cubemap_sheen001"
+	$sheenmapmask "effects\animatedsheen\animatedsheen0"
+	$sheenmapmaskframe 0
+	$sheenmaptint "[ 1 1 1 ]"
+
+	$yellow 0
+
+	Proxies
+	{
+		AnimatedWeaponSheen
+		{
+			animatedtexturevar "$sheenmapmask"
+			animatedtextureframenumvar "$sheenmapmaskframe"
+			animatedtextureframerate 40
+		}
+
+		invis
+		{
+		}
+
+		ModelGlowColor
+		{
+			resultVar "$glowcolor"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$selfillumtint"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Multiply
+		{
+			srcVar1 "$color2"
+			srcVar2 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

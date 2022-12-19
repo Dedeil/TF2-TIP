@@ -1,0 +1,63 @@
+VertexLitGeneric
+{
+	$basetexture "models/workshop/weapons/c_models/c_madmilk/c_madmilk_glass"
+
+	$lightwarptexture "models/lightwarps/jarate_lightwarp"
+
+	$additive 1
+	$nocull 1
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.30 0.30 0.20]"
+
+	$phong 1
+	$phongfresnelranges "[1 2 4]"
+	$phongexponent 65
+	$phongboost 6
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$glowcolor 1
+
+	$yellow 0
+
+	Proxies
+	{
+		invis
+		{
+		}
+
+		ModelGlowColor
+		{
+			resultVar "$glowcolor"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$selfillumtint"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Multiply
+		{
+			srcVar1 "$color2"
+			srcVar2 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

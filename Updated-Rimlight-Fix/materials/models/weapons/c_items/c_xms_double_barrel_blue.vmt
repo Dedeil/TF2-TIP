@@ -1,0 +1,9 @@
+Patch
+{
+	include "materials/models/weapons/c_items/c_xms_double_barrel.vmt"
+
+	insert
+	{
+		$basetexture "models/weapons/c_items/c_xms_double_barrel_blue"
+	}
+}

@@ -1,0 +1,74 @@
+VertexLitGeneric
+{
+	$basetexture "models/workshop_partner/weapons/c_models/c_tw_eagle/c_tw_eagle"
+
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
+
+	$nocull 1
+
+	$phong 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$phongexponent 10
+	$phongboost 8
+	$basemapalphaphongmask 1
+
+	$rimlight 1
+	$rimlightexponent 4
+	$rimlightboost 0.5
+
+	$cloakpassenabled 1
+
+	$glowcolor 1
+
+	$sheenpassenabled 1
+	$sheenindex 0
+	$sheenmap "cubemaps/cubemap_sheen001"
+	$sheenmapmask "effects/animatedsheen/animatedsheen0"
+	$sheenmapmaskframe 0
+	$sheenmaptint "[ 1 1 1 ]"
+
+	$yellow 0
+
+	Proxies
+	{
+		AnimatedWeaponSheen
+		{
+			animatedtexturevar "$sheenmapmask"
+			animatedtextureframenumvar "$sheenmapmaskframe"
+			animatedtextureframerate 40
+		}
+
+		invis
+		{
+		}
+
+		ModelGlowColor
+		{
+			resultVar "$glowcolor"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$selfillumtint"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
+		}
+
+		YellowLevel
+		{
+			resultVar "$yellow"
+		}
+
+		Multiply
+		{
+			srcVar1 "$color2"
+			srcVar2 "$yellow"
+			resultVar "$color2"
+		}
+	}
+}

@@ -1,0 +1,54 @@
+VertexLitGeneric
+{
+	$basetexture "models/workshop/weapons/c_models/c_madmilk/c_madmilk_liquid"
+
+	$lightwarptexture "models/lightwarps/weapon_lightwarp"
+
+	$phong 1
+	$phongfresnelranges "[0.25 0.5 1]"
+	$phongexponent 60
+	$phongboost 20
+	$basemapalphaphongmask 1
+
+	$cloakpassenabled 1
+
+	$glowcolor 1
+
+	$sheenpassenabled 1
+	$sheenindex 0
+	$sheenmap "cubemaps/cubemap_sheen001"
+	$sheenmapmask "effects/animatedsheen/animatedsheen0"
+	$sheenmapmaskframe 0
+	$sheenmaptint "[ 1 1 1 ]"
+
+	Proxies
+	{
+		AnimatedWeaponSheen
+		{
+			animatedtexturevar "$sheenmapmask"
+			animatedtextureframenumvar "$sheenmapmaskframe"
+			animatedtextureframerate 40
+		}
+
+		invis
+		{
+		}
+
+		ModelGlowColor
+		{
+			resultVar "$glowcolor"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$selfillumtint"
+		}
+
+		Equals
+		{
+			srcVar1 "$glowcolor"
+			resultVar "$color2"
+		}
+	}
+}
