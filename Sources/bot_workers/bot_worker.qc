@@ -6,14 +6,16 @@ $cdmaterials	"models/items"
 
 $mostlyopaque
 
+$surfaceprop "metal"
+
 $scale "1.1"
 
 $texturegroup "skins"
 {
-	{ "bot_worker_red_b" "bot_worker_glass" "australium_bar_red" }
-	{ "bot_worker_blue_b" "bot_worker_glass" "australium_bar_blue" }
-	{ "bot_worker_red_invun"  "invulnerability_red"  "invulnerability_red"  }
-	{ "bot_worker_blue_invun" "invulnerability_blue" "invulnerability_blue" }
+	{ "bot_worker_red_b"		"bot_worker_glass"		"australium_bar_red"	}
+	{ "bot_worker_blue_b"		"bot_worker_glass"		"australium_bar_blue"	}
+	{ "bot_worker_b_red_invun"	"invulnerability_red"	"invulnerability_red"	}
+	{ "bot_worker_b_blue_invun"	"invulnerability_blue"	"invulnerability_blue"	}
 }
 
 $pushd "parts/smd"
@@ -30,7 +32,7 @@ $popd
 
 $attachment "wheel" "wheel_w1" 0 0 0 rotate 0 0 0
 
-// Gibs.
+// Gibs
 $collisiontext {
 	$pushd "bots/bot_worker"
 		"break"
@@ -66,28 +68,28 @@ $collisiontext {
 	$popd
 }
 
-$jigglebone "arm_left_w1" 
-{ 
-has_base_spring 
-	{ 
+$jigglebone "arm_left_w1"
+{
+has_base_spring
+	{
 	stiffness 200
 	damping 0.4
-	left_constraint -0 0 
-	up_constraint -0 0
+	left_constraint 0 0
+	up_constraint 0 0
 	forward_constraint -4 4
-	} 
+	}
 }
 
-$jigglebone "arm_right_w1" 
-{ 
-has_base_spring 
-	{ 
+$jigglebone "arm_right_w1"
+{
+has_base_spring
+	{
 	stiffness 350
-	damping 1 
-	left_constraint -0 0 
-	up_constraint -0 0
+	damping 1
+	left_constraint 0 0
+	up_constraint 0 0
 	forward_constraint -4 4
-	} 
+	}
 }
 
 $jigglebone "wheel_w1" {
@@ -102,10 +104,10 @@ $jigglebone "wheel_w1" {
 	}
 
 	has_base_spring {
-		stiffness 750 
-		damping 10 
-		left_constraint -0 0
-		up_constraint -0 0
-		forward_constraint -0.25 2
+		stiffness 750
+		damping 10
+		left_constraint 0 0
+		up_constraint 0 0
+		forward_constraint 0.25 2
 	}
 }

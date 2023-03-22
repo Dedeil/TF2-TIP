@@ -2,40 +2,39 @@
 //  Bot Worker Gibs
 //=====================================
 
+$modelname	"bots/bot_worker/bot_worker_a_head_gib_r.mdl"
 
 $cdmaterials	"models/bots/bot_worker"
-$cdmaterials	"models/player/items/all_class"
-$cdmaterials "models\player\engineer"
-$cdmaterials "models\items"
+$cdmaterials	"models/effects/invulnerability"
+
+$opaque
 
 $upaxis Y
 
-$modelname	"bots/bot_worker/bot_worker_a_head_gib_r.mdl"
 $surfaceprop "metal"
 
-$body "Body" "parts/dmx/bot_worker_a_head_gib_r.dmx"
+$definevariable dmxFile "parts/dmx/bot_worker_a_head_gib_r.dmx"
 
-$sequence idle "parts/dmx/bot_worker_a_head_gib_r.dmx"
+$body "body" $dmxFile$
+
+$sequence "ref" $dmxFile$
 
 $texturegroup "skins"
 {
-	{ "bot_worker_red_b" "bot_worker_glass" "australium_bar_red" }
-	{ "bot_worker_blue_b" "bot_worker_glass" "australium_bar_blue" }		
-	{ "engineer_red_invun" "engineer_red_invun" "engineer_red_invun" }
-	{ "engineer_blue_invun" "engineer_blue_invun" "engineer_blue_invun" }
+	{ "bot_worker_a_red"		}
+	{ "bot_worker_a_blue"		}
+	{ "bot_worker_a_red_invun"	}
+	{ "bot_worker_a_blue_invun"	}
 }
 
-
-$collisionmodel "parts/dmx/bot_worker_a_head_gib_r.dmx" {
+$collisionmodel $dmxFile$ {
 	$automass
 }
 
-
-"$KeyValues"
+$keyvalues
 {
-	"prop_data"
+	prop_data
 	{
 		// Only here so that the world_interactions section will get parsed
 	}
-
 }
