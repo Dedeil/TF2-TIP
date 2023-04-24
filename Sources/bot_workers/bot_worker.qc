@@ -14,8 +14,8 @@ $texturegroup "skins"
 {
 	{ "bot_worker_red_b"		"bot_worker_glass"		"australium_bar_red"	}
 	{ "bot_worker_blue_b"		"bot_worker_glass"		"australium_bar_blue"	}
-	{ "bot_worker_b_red_invun"	"invulnerability_red"	"invulnerability_red"	}
-	{ "bot_worker_b_blue_invun"	"invulnerability_blue"	"invulnerability_blue"	}
+	{ "bot_worker_red_b_invun"	"invulnerability_red"	"invulnerability_red"	}
+	{ "bot_worker_blue_b_invun"	"invulnerability_blue"	"invulnerability_blue"	}
 }
 
 $pushd "parts/smd"

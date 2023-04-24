@@ -1,6 +1,6 @@
 VertexLitGeneric
 {
-	$basetexture "models/items/medkit_noalpha
+	$basetexture "models/items/medkit_noalpha"
 
 	$lightwarptexture "models/buildables/sentry1/sentry1_lightwarp"
 
